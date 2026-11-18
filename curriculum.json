@@ -1,0 +1,467 @@
+
+{
+  "program": "30-Day English B1-B2 Challenge",
+  "book": "English Grammar in Use",
+  "author": "Raymond Murphy",
+  "edition": "5th Edition",
+  "level": "B1-B2",
+  "participants": 4,
+  "daily_goal": "Grammar + Writing + Speaking + Idioms",
+  "daily_duration": "90-120 minutes",
+  "days": [
+    {
+      "day": 1,
+      "grammar_topic": {
+        "unit": 1,
+        "name": "Present Continuous",
+        "rule": "am/is/are + V-ing. Hozir sodir bo'layotgan harakatlar uchun ishlatiladi."
+      },
+      "writing_topic": "Is university education really necessary to become successful?",
+      "speaking_debate": "Would you rather be rich without happiness or happy without money?",
+      "bonus_idiom": {
+        "phrase": "No way!",
+        "translation": "Bo'lishi mumkin emas! / Aslo!"
+      }
+    },
+    {
+      "day": 2,
+      "grammar_topic": {
+        "unit": 2,
+        "name": "Present Simple",
+        "rule": "V1 yoki V+s/es. Odatlar, kundalik ishlar va umumiy haqiqatlar uchun ishlatiladi."
+      },
+      "writing_topic": "Social media: Does it make young people smarter or more distracted?",
+      "speaking_debate": "Can a person live a happy life without social media?",
+      "bonus_idiom": {
+        "phrase": "What's up?",
+        "translation": "Nima gap? / Ishlar qalay?"
+      }
+    },
+    {
+      "day": 3,
+      "grammar_topic": {
+        "unit": 3,
+        "name": "Present Continuous and Present Simple 1",
+        "rule": "Present Simple odatiy harakatlar, Present Continuous ayni paytdagi yoki vaqtinchalik harakatlar uchun."
+      },
+      "writing_topic": "Online education vs traditional university education.",
+      "speaking_debate": "Are online classes better than studying in a real classroom?",
+      "bonus_idiom": {
+        "phrase": "You bet!",
+        "translation": "Albatta! / Shubhasiz!"
+      }
+    },
+    {
+      "day": 4,
+      "grammar_topic": {
+        "unit": 4,
+        "name": "Present Continuous and Present Simple 2",
+        "rule": "Holat fe'llari (know, believe, understand, want) odatda Continuous shaklida ishlatilmaydi."
+      },
+      "writing_topic": "Do smartphones make people less intelligent?",
+      "speaking_debate": "Could you live for 30 days without your smartphone?",
+      "bonus_idiom": {
+        "phrase": "Give me a break!",
+        "translation": "Qo'ysang-chi! / Meni tinch qo'y!"
+      }
+    },
+    {
+      "day": 5,
+      "grammar_topic": {
+        "unit": 5,
+        "name": "Past Simple",
+        "rule": "V2 yoki did + V1. O'tmishda tugagan harakatlar uchun ishlatiladi."
+      },
+      "writing_topic": "The most important lesson young men should learn before turning 25.",
+      "speaking_debate": "Is it better to learn from your own mistakes or other people's mistakes?",
+      "bonus_idiom": {
+        "phrase": "My bad!",
+        "translation": "Mening xatom! / Ayb menda!"
+      }
+    },
+    {
+      "day": 6,
+      "grammar_topic": {
+        "unit": 6,
+        "name": "Past Continuous",
+        "rule": "was/were + V-ing. O'tmishdagi ma'lum bir vaqtda davom etayotgan harakatni bildiradi."
+      },
+      "writing_topic": "How has technology changed our childhood?",
+      "speaking_debate": "Was life better before the internet?",
+      "bonus_idiom": {
+        "phrase": "What a mess!",
+        "translation": "Qanday tartibsizlik!"
+      }
+    },
+    {
+      "day": 7,
+      "grammar_topic": {
+        "unit": 7,
+        "name": "Present Perfect 1",
+        "rule": "have/has + V3. O'tmishda sodir bo'lgan, hozirgi natijasi yoki ahamiyati bor harakatlar."
+      },
+      "writing_topic": "Five experiences every young man should have before the age of 25.",
+      "speaking_debate": "Is travelling more valuable than buying expensive things?",
+      "bonus_idiom": {
+        "phrase": "Been there, done that!",
+        "translation": "Buni allaqachon boshdan kechirganman!"
+      }
+    },
+    {
+      "day": 8,
+      "grammar_topic": {
+        "unit": 8,
+        "name": "Present Perfect 2",
+        "rule": "Already, yet, just, ever va never Present Perfect bilan ko'p ishlatiladi."
+      },
+      "writing_topic": "Is money the most important factor in choosing a career?",
+      "speaking_debate": "Would you choose a high salary or a job you love?",
+      "bonus_idiom": {
+        "phrase": "It's up to you!",
+        "translation": "Bu o'zingga bog'liq!"
+      }
+    },
+    {
+      "day": 9,
+      "grammar_topic": {
+        "unit": 9,
+        "name": "Present Perfect Continuous",
+        "rule": "have/has been + V-ing. O'tmishda boshlanib hozirgacha davom etayotgan harakatni bildiradi."
+      },
+      "writing_topic": "Why is self-discipline more important than motivation?",
+      "speaking_debate": "Can discipline make an average person successful?",
+      "bonus_idiom": {
+        "phrase": "Keep it up!",
+        "translation": "Shu zaylda davom et!"
+      }
+    },
+    {
+      "day": 10,
+      "grammar_topic": {
+        "unit": 10,
+        "name": "Present Perfect Continuous and Simple",
+        "rule": "Perfect Simple natija yoki miqdorga, Perfect Continuous esa jarayon va davomiylikka urg'u beradi."
+      },
+      "writing_topic": "Reading books vs watching educational videos: Which is more effective?",
+      "speaking_debate": "Can YouTube replace traditional education?",
+      "bonus_idiom": {
+        "phrase": "It's worth it!",
+        "translation": "Bunga arziydi!"
+      }
+    },
+    {
+      "day": 11,
+      "grammar_topic": {
+        "unit": 11,
+        "name": "How long have you (been)...?",
+        "rule": "How long bilan davomiylik so'raladi. Have you known yoki Have you been working kabi shakllar ishlatiladi."
+      },
+      "writing_topic": "How can young people use their time more effectively?",
+      "speaking_debate": "Is waking up at 5 AM the secret to success?",
+      "bonus_idiom": {
+        "phrase": "Time flies!",
+        "translation": "Vaqt juda tez o'tadi!"
+      }
+    },
+    {
+      "day": 12,
+      "grammar_topic": {
+        "unit": 12,
+        "name": "For and Since",
+        "rule": "For vaqt davomiyligi bilan, Since esa boshlanish nuqtasi bilan ishlatiladi."
+      },
+      "writing_topic": "The importance of learning English in the modern world.",
+      "speaking_debate": "Is English more important than learning programming?",
+      "bonus_idiom": {
+        "phrase": "Better late than never!",
+        "translation": "Hechdan ko'ra kech yaxshi!"
+      }
+    },
+    {
+      "day": 13,
+      "grammar_topic": {
+        "unit": 13,
+        "name": "Present Perfect and Past Simple 1",
+        "rule": "Present Perfect aniq tugagan vaqtni ko'rsatmaydi; Past Simple esa tugagan vaqt bilan ishlatiladi."
+      },
+      "writing_topic": "Has the younger generation become more ambitious than previous generations?",
+      "speaking_debate": "Are today's young people more successful than their parents were?",
+      "bonus_idiom": {
+        "phrase": "Long story short!",
+        "translation": "Qisqasi! / Gapning qisqasi!"
+      }
+    },
+    {
+      "day": 14,
+      "grammar_topic": {
+        "unit": 14,
+        "name": "Present Perfect and Past Simple 2",
+        "rule": "Been to tashrif buyurib qaytganlikni, gone to esa biror joyga ketganlikni bildiradi."
+      },
+      "writing_topic": "Should young people move abroad to build a better future?",
+      "speaking_debate": "Would you leave your country if you got a great job abroad?",
+      "bonus_idiom": {
+        "phrase": "Dream big!",
+        "translation": "Katta orzu qil!"
+      }
+    },
+    {
+      "day": 15,
+      "grammar_topic": {
+        "unit": 15,
+        "name": "Past Perfect",
+        "rule": "had + V3. O'tmishdagi boshqa bir hodisadan oldin sodir bo'lgan ishni bildiradi."
+      },
+      "writing_topic": "One mistake that can completely change a person's future.",
+      "speaking_debate": "Can one bad decision destroy a successful future?",
+      "bonus_idiom": {
+        "phrase": "If only!",
+        "translation": "Qaniydi! / Eh, attang!"
+      }
+    },
+    {
+      "day": 16,
+      "grammar_topic": {
+        "unit": 16,
+        "name": "Past Perfect Continuous",
+        "rule": "had been + V-ing. O'tmishdagi ma'lum bir vaqtgacha davom etgan jarayonni bildiradi."
+      },
+      "writing_topic": "Why do some talented people fail while ordinary people succeed?",
+      "speaking_debate": "Is hard work more important than natural talent?",
+      "bonus_idiom": {
+        "phrase": "No pain, no gain!",
+        "translation": "Mashaqqatsiz natija bo'lmaydi!"
+      }
+    },
+    {
+      "day": 17,
+      "grammar_topic": {
+        "unit": 17,
+        "name": "Have and Have Got",
+        "rule": "Have/Have got egalikni, shuningdek ayrim holat va munosabatlarni ifodalaydi."
+      },
+      "writing_topic": "What makes a man truly successful: money, knowledge or character?",
+      "speaking_debate": "Does a successful man need to be financially rich?",
+      "bonus_idiom": {
+        "phrase": "You've got this!",
+        "translation": "Sen buni uddalaysan!"
+      }
+    },
+    {
+      "day": 18,
+      "grammar_topic": {
+        "unit": 18,
+        "name": "Used to",
+        "rule": "Used to + V1. O'tmishda odat bo'lgan, hozir esa mavjud bo'lmagan holat yoki harakat."
+      },
+      "writing_topic": "How has modern life changed family relationships?",
+      "speaking_debate": "Were people happier 50 years ago than they are today?",
+      "bonus_idiom": {
+        "phrase": "Those were the days!",
+        "translation": "Ana o'sha davrlar edi!"
+      }
+    },
+    {
+      "day": 19,
+      "grammar_topic": {
+        "unit": 19,
+        "name": "Present Tenses for the Future",
+        "rule": "Present Continuous kelishilgan rejalar, Present Simple esa jadval va rasmiy vaqtlar uchun ishlatiladi."
+      },
+      "writing_topic": "Where do you see yourself in ten years?",
+      "speaking_debate": "Should young people plan their entire future before the age of 25?",
+      "bonus_idiom": {
+        "phrase": "Fingers crossed!",
+        "translation": "Omad tilayman! / Ishqilib, omad bo'lsin!"
+      }
+    },
+    {
+      "day": 20,
+      "grammar_topic": {
+        "unit": 20,
+        "name": "Going to",
+        "rule": "am/is/are going to + V1. Oldindan qilingan reja va mavjud dalilga asoslangan taxmin uchun ishlatiladi."
+      },
+      "writing_topic": "Will artificial intelligence take away most human jobs?",
+      "speaking_debate": "Will AI make programmers unnecessary in the future?",
+      "bonus_idiom": {
+        "phrase": "Here we go!",
+        "translation": "Qani, boshladik! / Mana ketdik!"
+      }
+    },
+    {
+      "day": 21,
+      "grammar_topic": {
+        "unit": 21,
+        "name": "Will and Shall 1",
+        "rule": "Will + V1. Tezkor qarorlar, va'dalar, takliflar va kelajak haqidagi taxminlar uchun ishlatiladi."
+      },
+      "writing_topic": "Will robots become better workers than humans?",
+      "speaking_debate": "Should robots replace humans in dangerous jobs?",
+      "bonus_idiom": {
+        "phrase": "No big deal!",
+        "translation": "Hechqisi yo'q! / Katta muammo emas!"
+      }
+    },
+    {
+      "day": 22,
+      "grammar_topic": {
+        "unit": 22,
+        "name": "Will and Shall 2",
+        "rule": "Will kelajakdagi holat va fikrlarni ifodalaydi; Shall I...? taklif qilish uchun ishlatiladi."
+      },
+      "writing_topic": "Is marriage still important for young people in the modern world?",
+      "speaking_debate": "Is it better to get married young or build a career first?",
+      "bonus_idiom": {
+        "phrase": "Count me in!",
+        "translation": "Men ham qatnashaman! / Meni ham qo'sh!"
+      }
+    },
+    {
+      "day": 23,
+      "grammar_topic": {
+        "unit": 23,
+        "name": "I Will and I'm Going To",
+        "rule": "Will tezkor qaror uchun, Going to esa oldindan rejalashtirilgan ish uchun ishlatiladi."
+      },
+      "writing_topic": "Should university students work while studying?",
+      "speaking_debate": "Is earning money during university more important than getting excellent grades?",
+      "bonus_idiom": {
+        "phrase": "Make it happen!",
+        "translation": "Buni amalga oshir!"
+      }
+    },
+    {
+      "day": 24,
+      "grammar_topic": {
+        "unit": 24,
+        "name": "Will Be Doing and Will Have Done",
+        "rule": "Future Continuous kelajakdagi jarayonni, Future Perfect esa ma'lum vaqtgacha tugallangan ishni bildiradi."
+      },
+      "writing_topic": "How will technology change our daily lives by 2040?",
+      "speaking_debate": "Will people become more intelligent or more dependent on technology?",
+      "bonus_idiom": {
+        "phrase": "Mark my words!",
+        "translation": "Gapimni eslab qol! / Aytganimni eslab qo'y!"
+      }
+    },
+    {
+      "day": 25,
+      "grammar_topic": {
+        "unit": 25,
+        "name": "When I Do and When I've Done",
+        "rule": "Kelajak ma'nosidagi when, if, before, after kabi ergash gaplarda odatda will ishlatilmaydi."
+      },
+      "writing_topic": "Should people follow their dreams even when their families disagree?",
+      "speaking_debate": "Would you choose your parents' expectations or your personal dreams?",
+      "bonus_idiom": {
+        "phrase": "Whatever happens!",
+        "translation": "Nima bo'lishidan qat'i nazar!"
+      }
+    },
+    {
+      "day": 26,
+      "grammar_topic": {
+        "unit": 26,
+        "name": "Can, Could and Be Able To",
+        "rule": "Can hozirgi qobiliyat, Could o'tmishdagi umumiy qobiliyat, Be able to esa turli zamonlarda qobiliyatni bildiradi."
+      },
+      "writing_topic": "Can a person become successful without a university degree?",
+      "speaking_debate": "Are practical skills more valuable than academic knowledge?",
+      "bonus_idiom": {
+        "phrase": "I can handle it!",
+        "translation": "Men buni uddalay olaman!"
+      }
+    },
+    {
+      "day": 27,
+      "grammar_topic": {
+        "unit": 27,
+        "name": "Could and Could Have Done",
+        "rule": "Could + V1 imkoniyat yoki qobiliyatni, Could have + V3 esa o'tmishda amalga oshmagan imkoniyatni bildiradi."
+      },
+      "writing_topic": "Do people regret the opportunities they did not take?",
+      "speaking_debate": "Is taking risks better than living a safe and comfortable life?",
+      "bonus_idiom": {
+        "phrase": "What if?",
+        "translation": "Agar shunday bo'lsa-chi?"
+      }
+    },
+    {
+      "day": 28,
+      "grammar_topic": {
+        "unit": 28,
+        "name": "Must and Can't",
+        "rule": "Must kuchli mantiqiy xulosani, Can't esa biror narsaning mumkin emasligi haqidagi xulosani bildiradi."
+      },
+      "writing_topic": "Should success be measured by money or by personal achievements?",
+      "speaking_debate": "Can money buy happiness?",
+      "bonus_idiom": {
+        "phrase": "No kidding!",
+        "translation": "Rostdanmi! / Hazillashmayapsanmi?"
+      }
+    },
+    {
+      "day": 29,
+      "grammar_topic": {
+        "unit": 29,
+        "name": "May and Might 1",
+        "rule": "May va Might ehtimollikni bildiradi. Might odatda ehtimol biroz kuchsizroq ekanini anglatishi mumkin."
+      },
+      "writing_topic": "Will studying abroad guarantee a better future?",
+      "speaking_debate": "Is it worth leaving your home country to achieve your dreams?",
+      "bonus_idiom": {
+        "phrase": "Fate has other plans!",
+        "translation": "Taqdirning boshqa rejalari bor!"
+      }
+    },
+    {
+      "day": 30,
+      "grammar_topic": {
+        "unit": 30,
+        "name": "May and Might 2",
+        "rule": "May/Might + have + V3 o'tmishdagi ehtimoliy voqeani bildiradi. May/Might + V1 kelajakdagi ehtimolni ifodalaydi."
+      },
+      "writing_topic": "What does it really mean to be a successful man in the 21st century?",
+      "speaking_debate": "If you could change one thing about the world, what would it be and why?",
+      "bonus_idiom": {
+        "phrase": "The sky's the limit!",
+        "translation": "Imkoniyatlarning chegarasi yo'q!"
+      }
+    }
+  ],
+  "daily_rules": {
+    "grammar": "Har kuni Murphy kitobidan tegishli Unitni o'qish va barcha mashqlarni bajarish.",
+    "writing": "Har bir talaba 150-200 so'zli mustaqil insho yozadi.",
+    "speaking": "Kechqurun 10 daqiqalik inglizcha video-chatda bahslashish.",
+    "idioms": "Har kuni yangi iborani yodlash va kamida 3 ta gapda ishlatish.",
+    "vocabulary": "Har kuni 10-15 ta yangi so'z o'rganish.",
+    "listening": "Har kuni 15 daqiqa inglizcha video yoki film tomosha qilish.",
+    "reading": "Har kuni 10-15 daqiqa inglizcha matn o'qish."
+  },
+  "weekly_challenges": [
+    {
+      "week": 1,
+      "challenge": "O'zingiz, kundalik hayotingiz va o'tmishdagi tajribangiz haqida 3 daqiqa gapirish."
+    },
+    {
+      "week": 2,
+      "challenge": "Present Perfect va Past Perfect yordamida hayotiy voqealarni hikoya qilish."
+    },
+    {
+      "week": 3,
+      "challenge": "Kelajakdagi rejalar va orzular haqida 5 daqiqa gapirish."
+    },
+    {
+      "week": 4,
+      "challenge": "Murakkab mavzuda fikr bildirish, dalillar keltirish va qarshi fikrga javob berish."
+    }
+  ],
+  "final_exam": {
+    "grammar": "30 ta grammatik savol.",
+    "writing": "250 so'zli argumentativ insho.",
+    "speaking": "5 daqiqalik mustaqil nutq va 10 daqiqalik guruh bahsi.",
+    "listening": "10 daqiqalik inglizcha audio yoki videoni tinglab tushunish.",
+    "goal": "B1 darajadagi bilimlarni mustahkamlash va B2 tomon rivojlanish."
+  }
+}
