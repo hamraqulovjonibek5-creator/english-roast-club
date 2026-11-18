@@ -1,0 +1,941 @@
+<!doctype html>
+<html lang="uz" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>English Roast Club — 30-Day B1-B2 Intensive Challenge</title>
+  
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Custom Modern Vercel/Linear CSS -->
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+  <!-- STICKY TOP NAVIGATION BAR -->
+  <header class="app-header py-2 px-3 px-lg-4">
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+      
+      <!-- Brand & Badges -->
+      <div class="d-flex align-items-center gap-3">
+        <span class="fs-4">🔥</span>
+        <div>
+          <div class="brand-title">English Roast Club</div>
+          <div class="d-flex align-items-center gap-2 mt-1">
+            <span class="brand-badge">B1 → B2 INTENSIVE</span>
+            <span class="text-dim small" style="font-size:0.75rem;">30-KUNLIK CHALLENGE</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Segmented Navigation Pills -->
+      <nav class="nav-segmented">
+        <button class="nav-pill-btn active" data-tab="tab-curriculum">
+          <span>🎯</span><span>30-Kunlik Vazifalar</span>
+        </button>
+        <button class="nav-pill-btn" data-tab="tab-profiles">
+          <span>👤</span><span>Profil & Auth</span>
+        </button>
+        <button class="nav-pill-btn" data-tab="tab-leaderboard">
+          <span>🏆</span><span>Leaderboard & Do'stlar</span>
+        </button>
+        <button class="nav-pill-btn" data-tab="tab-vocab">
+          <span>⚡</span><span>Lug'at & Duel</span>
+        </button>
+        <button class="nav-pill-btn" data-tab="tab-guide">
+          <span>📚</span><span>Murphy & Video-Chat</span>
+        </button>
+      </nav>
+
+      <!-- Right Actions: Active User Pill & Video Call Quick Link -->
+      <div class="d-flex align-items-center gap-2">
+        <a id="btnTelegramLink" href="#" target="_blank" class="btn btn-dark-subtle btn-sm d-none d-sm-inline-flex align-items-center gap-1" title="Telegram Video-Chat">
+          <span>📹</span><span>Kechki Chat</span>
+        </a>
+        <button class="btn btn-dark-subtle btn-sm px-2" onclick="openVideoLinkSettingsModal()" title="Video havolalarni sozlash">⚙️</button>
+        
+        <!-- Current User Status Pill -->
+        <div class="user-status-pill" onclick="switchTab('tab-profiles')">
+          <div class="avatar-badge-circle" id="headerAvatar">⚡</div>
+          <div class="d-none d-md-block text-start">
+            <div class="fw-bold text-light" style="font-size:0.82rem;" id="headerUserName">Ali</div>
+            <div class="text-dim" style="font-size:0.7rem;">🔥 <span id="headerStreak">0</span> | <span id="headerPoints" class="text-lime fw-bold">0</span> pts</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- MAIN APPLICATION CONTAINER -->
+  <main class="container-fluid px-3 px-lg-4 py-4">
+
+    <!-- =========================================================================
+         TAB 2: 30-DAY CURRICULUM & DAILY TASKS HUB (DEFAULT ACTIVE)
+         ========================================================================= -->
+    <section id="tab-curriculum" class="tab-content-section">
+      
+      <!-- Day Horizon Scroller Bar -->
+      <div class="mb-4">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <div class="small fw-bold text-dim text-uppercase" style="letter-spacing:0.05em;">30 Kunlik Dastur Gorizonti (Kunga bosing)</div>
+          <div class="small text-lime fw-bold" id="curriculumDayBadge">KUN 1 / 30</div>
+        </div>
+        <div class="day-scroller-wrap" id="dayScrollerTrack"></div>
+      </div>
+
+      <!-- Day Completion Alert (if already submitted) -->
+      <div id="dayStatusAlert" class="alert alert-success d-none mb-4 py-2 px-3 small d-flex justify-content-between align-items-center" style="background: rgba(0, 245, 155, 0.15); border: 1px solid var(--accent-emerald); color: #fff;">
+        <span id="dayStatusText">Kun topshirilgan!</span>
+        <span class="badge bg-success">Qayta topshirish mumkin</span>
+      </div>
+
+      <!-- Main 2-Column Task Grid -->
+      <div class="row g-4">
+        
+        <!-- Left Column: Murphy Grammar & Daily Routine -->
+        <div class="col-lg-6">
+          <div class="glass-panel p-4 h-100 d-flex flex-column">
+            
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <div>
+                <span class="badge rule-badge mb-1">RAYMOND MURPHY GRAMMAR</span>
+                <h5 class="fw-bold m-0 text-light" id="grammarUnitTitle">Unit 1: Present Continuous</h5>
+              </div>
+              <span class="small text-dim" id="curriculumDate">Bugun</span>
+            </div>
+
+            <!-- Grammar Rule Summary Box -->
+            <div class="p-3 rounded mb-3" style="background: rgba(14, 18, 28, 0.9); border-left: 4px solid var(--accent-lime);">
+              <div class="small text-dim text-uppercase fw-bold mb-1" style="font-size:0.75rem;">Qoida & Formula</div>
+              <div class="small text-light" id="grammarRuleSummary">am/is/are + V-ing. Hozir sodir bo'layotgan harakatlar uchun ishlatiladi.</div>
+            </div>
+
+            <!-- Bonus Idiom & Debate Topic -->
+            <div class="row g-2 mb-4">
+              <div class="col-sm-6">
+                <div class="p-3 rounded h-100" style="background: rgba(22, 28, 44, 0.6); border: 1px solid var(--border-subtle);">
+                  <div class="small text-warning fw-bold mb-1">🔥 Bonus Idiom</div>
+                  <div class="fw-bold text-light" id="idiomPhrase">No way!</div>
+                  <div class="small text-dim" id="idiomTranslation">Bo'lishi mumkin emas!</div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="p-3 rounded h-100" style="background: rgba(22, 28, 44, 0.6); border: 1px solid var(--border-subtle);">
+                  <div class="small text-info fw-bold mb-1">🎙️ Kechki Debat Savoli</div>
+                  <div class="small text-light text-truncate" id="debateQuestion">Rich without happiness or happy without money?</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 5 Daily Tasks Checkbox Cards -->
+            <div class="small fw-bold text-dim text-uppercase mb-2" style="letter-spacing:0.05em;">5 Ta Majburiy Vazifa (+20 ball / har biri)</div>
+            <div class="d-flex flex-column gap-2 mb-4">
+              
+              <!-- 1. Grammar -->
+              <div class="task-item-card" onclick="toggleTask('taskGrammar')">
+                <div class="custom-checkbox"><input type="checkbox" id="taskGrammar" class="d-none"></div>
+                <div class="task-title small" id="taskLabelGrammar">Murphy mashqlarini bajardim</div>
+                <div class="points-pill">+20</div>
+              </div>
+
+              <!-- 2. Vocab -->
+              <div class="task-item-card" onclick="toggleTask('taskVocab')">
+                <div class="custom-checkbox"><input type="checkbox" id="taskVocab" class="d-none"></div>
+                <div class="task-title small" id="taskLabelVocab">Vocab: Yangi so'zlar kiritdim</div>
+                <div class="points-pill">+20</div>
+              </div>
+
+              <!-- 3. Listening -->
+              <div class="task-item-card" onclick="toggleTask('taskListening')">
+                <div class="custom-checkbox"><input type="checkbox" id="taskListening" class="d-none"></div>
+                <div class="task-title small">Listening: 15-20 daqiqa inglizcha video/podcast</div>
+                <div class="points-pill">+20</div>
+              </div>
+
+              <!-- 4. Reading -->
+              <div class="task-item-card" onclick="toggleTask('taskReading')">
+                <div class="custom-checkbox"><input type="checkbox" id="taskReading" class="d-none"></div>
+                <div class="task-title small">Reading: 15 daqiqa inglizcha matn o'qidim</div>
+                <div class="points-pill">+20</div>
+              </div>
+
+              <!-- 5. Writing -->
+              <div class="task-item-card" onclick="toggleTask('taskWriting')">
+                <div class="custom-checkbox"><input type="checkbox" id="taskWriting" class="d-none"></div>
+                <div class="task-title small" id="taskLabelWriting">Writing: Kunlik insho yozdim</div>
+                <div class="points-pill">+20</div>
+              </div>
+
+            </div>
+
+            <!-- Quick Add Vocab Inline -->
+            <div class="mt-auto pt-3 border-top border-secondary-subtle">
+              <div class="d-flex justify-content-between small text-dim mb-2">
+                <span class="fw-semibold">Tezkor so'z qo'shish (Bazada mavjud bo'lishi shart)</span>
+                <a href="javascript:void(0)" onclick="switchTab('tab-vocab')" class="text-lime text-decoration-none">Barcha lug'at &rarr;</a>
+              </div>
+              <div class="input-group input-group-sm">
+                <input type="text" id="newVocabWord" class="form-control-dark form-control form-control-sm" placeholder="English word">
+                <input type="text" id="newVocabTrans" class="form-control-dark form-control form-control-sm" placeholder="Tarjimasi">
+                <select id="newVocabPos" class="form-select-dark form-select form-select-sm" style="max-width:110px;">
+                  <option value="noun">Noun</option>
+                  <option value="verb">Verb</option>
+                  <option value="adjective">Adj</option>
+                  <option value="idiom">Idiom</option>
+                </select>
+                <input type="hidden" id="newVocabExample" value="">
+                <button class="btn btn-neon-lime btn-sm px-3" onclick="addVocabWord()">+ Saqlash</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Right Column: Writing Essay Workspace & Live Word Counter -->
+        <div class="col-lg-6">
+          <div class="glass-panel p-4 h-100 d-flex flex-column">
+            
+            <div class="mb-3">
+              <span class="badge bg-secondary mb-1">KUNLIK INSHO MAVZUSI</span>
+              <h5 class="fw-bold text-light" id="writingTopicHeader">Is university education really necessary to become successful?</h5>
+            </div>
+
+            <!-- Word Counter & Meter -->
+            <div class="mb-2">
+              <div class="d-flex justify-content-between align-items-center small">
+                <span class="text-dim">Insho talabi: kamida <strong id="requiredWordsThreshold" class="text-light">40</strong> so'z</span>
+                <span id="liveWordCountBadge" class="badge bg-danger">0 / 40 so'z</span>
+              </div>
+              <div class="word-counter-meter">
+                <div id="liveWordProgressBar" class="word-counter-progress"></div>
+              </div>
+            </div>
+
+            <!-- Essay Textarea -->
+            <textarea id="essayInputArea" class="form-control-dark form-control flex-grow-1 mb-3" rows="10"
+                      placeholder="Fikrlaringizni to'liq ingliz tilida bayon qiling. Grammar unit mavzusidan va yangi so'zlardan foydalanishga harakat qiling..."></textarea>
+
+            <!-- Real-time Score & Fine Preview -->
+            <div class="p-3 rounded mb-3" style="background: rgba(14, 18, 28, 0.7); border: 1px solid var(--border-subtle);">
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <div class="small text-dim">Taxminiy Natija:</div>
+                  <div class="fw-bold fs-5 text-light" id="liveScorePreview">0 / 100 Ball</div>
+                </div>
+                <div class="text-end">
+                  <div class="small text-dim">Kutilayotgan Jarima:</div>
+                  <div class="fw-bold fs-6" id="liveFinePreview">10,000 so'm (Katta jarima 💀)</div>
+                </div>
+              </div>
+              <div class="small text-dim mt-2" style="font-size:0.75rem;">
+                Qoida: 100 ball = 0 so'm | 60-80 ball = 5,000 so'm | 0-40 ball = 10,000 so'm
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button class="btn btn-neon-lime w-100 py-3 fs-6" onclick="submitDailyLogForm()">
+              🚀 Kunlik Topshiriqlarni Saqlash / Topshirish
+            </button>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         TAB 1: AUTH & USER PROFILES
+         ========================================================================= -->
+    <section id="tab-profiles" class="tab-content-section d-none">
+      <div class="row g-4">
+        
+        <!-- Left: Active Profile Showcase Card -->
+        <div class="col-lg-5">
+          <div class="glass-panel p-4 text-center">
+            
+            <div class="d-inline-flex p-3 rounded-circle mb-3" style="background: rgba(198, 255, 0, 0.1); border: 2px solid var(--accent-lime); font-size: 3.5rem;" id="profCardAvatar">
+              ⚡
+            </div>
+            
+            <h4 class="fw-bold text-light mb-1" id="profCardName">Ali The Grinder</h4>
+            <div class="text-dim small mb-2" id="profCardUsername">@Ali</div>
+            <p class="text-muted small px-3 mb-3" id="profCardBio">B1 warrior on the road to B2 fluency 🔥</p>
+            
+            <div class="d-flex justify-content-center gap-2 mb-4">
+              <span class="badge rule-badge" id="profCardLevelBadge">Daraja 1 • Target: Lvl 3</span>
+              <span class="badge bg-success" id="profCardShieldBadge">🛡️ Qalqon Mavjud (1x)</span>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="row g-2 text-start">
+              <div class="col-6">
+                <div class="p-3 rounded" style="background: rgba(14, 18, 28, 0.8); border: 1px solid var(--border-subtle);">
+                  <div class="small text-dim">Jami Ballar</div>
+                  <div class="fs-4 fw-bold text-lime" id="profCardPoints">0 ball</div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="p-3 rounded" style="background: rgba(14, 18, 28, 0.8); border: 1px solid var(--border-subtle);">
+                  <div class="small text-dim">Streak</div>
+                  <div class="fs-4 fw-bold text-light" id="profCardStreak">🔥 0 kun</div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="p-3 rounded" style="background: rgba(14, 18, 28, 0.8); border: 1px solid var(--border-subtle);">
+                  <div class="small text-dim">Jami Jarima</div>
+                  <div class="fs-4 fw-bold text-danger" id="profCardFine">0 so'm</div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="p-3 rounded" style="background: rgba(14, 18, 28, 0.8); border: 1px solid var(--border-subtle);">
+                  <div class="small text-dim">Topshirilgan Kunlar</div>
+                  <div class="fs-4 fw-bold text-info" id="profCardDays">0/30 kun</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Right: Profile Settings & Multi-User Switcher -->
+        <div class="col-lg-7">
+          <div class="glass-panel p-4 mb-4">
+            
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <div>
+                <h5 class="fw-bold text-light m-0">Profil Sozlamalari</h5>
+                <div class="small text-dim">Ism, avatar va maqsadli darajangizni o'zgartiring</div>
+              </div>
+              <button class="btn btn-neon-lime btn-sm px-3" onclick="saveProfileSettings()">Saqlash</button>
+            </div>
+
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label small text-dim fw-bold">Ko'rinadigan Ism (Display Name)</label>
+                <input type="text" id="editDisplayName" class="form-control-dark form-control" placeholder="Masalan: Ali The Grinder">
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label small text-dim fw-bold">Avatar (Emoji yoki Rasm URL)</label>
+                <div class="input-group">
+                  <input type="text" id="editAvatar" class="form-control-dark form-control" placeholder="⚡">
+                  <div class="dropdown">
+                    <button class="btn btn-dark-subtle dropdown-toggle" type="button" data-bs-toggle="dropdown">Tanlash</button>
+                    <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end p-2" style="min-width: 180px;">
+                      <li class="d-flex gap-2 justify-content-center p-1">
+                        <span class="fs-4" style="cursor:pointer;" onclick="selectPresetAvatar('⚡')">⚡</span>
+                        <span class="fs-4" style="cursor:pointer;" onclick="selectPresetAvatar('🦁')">🦁</span>
+                        <span class="fs-4" style="cursor:pointer;" onclick="selectPresetAvatar('🚀')">🚀</span>
+                        <span class="fs-4" style="cursor:pointer;" onclick="selectPresetAvatar('🐺')">🐺</span>
+                      </li>
+                      <li class="d-flex gap-2 justify-content-center p-1">
+                        <span class="fs-4" style="cursor:pointer;" onclick="selectPresetAvatar('🔥')">🔥</span>
+                        <span class="fs-4" style="cursor:pointer;" onclick="selectPresetAvatar('👑')">👑</span>
+                        <span class="fs-4" style="cursor:pointer;" onclick="selectPresetAvatar('🎯')">🎯</span>
+                        <span class="fs-4" style="cursor:pointer;" onclick="selectPresetAvatar('💎')">💎</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <label class="form-label small text-dim fw-bold">Bio / Roast Status</label>
+                <input type="text" id="editBio" class="form-control-dark form-control" placeholder="Maqsadingiz yoki do'stlarga qarshi shioringiz">
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label small text-dim fw-bold">Hozirgi Daraja (1 - 5)</label>
+                <select id="editCurrentLevel" class="form-select-dark form-select">
+                  <option value="1">1. Warm-up (Razmalka) — 10 so'z / 40 so'z insho</option>
+                  <option value="2">2. Tezlashish (Razgon) — 12 so'z / 60 so'z insho</option>
+                  <option value="3">3. Normal (Standart) — 15 so'z / 80 so'z insho</option>
+                  <option value="4">4. Hardcore (Turbo) — 20 so'z / 100 so'z insho</option>
+                  <option value="5">5. Beast Mode (O'lim zonasi) — 25 so'z / 120 so'z insho</option>
+                </select>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label small text-dim fw-bold">Maqsadli Daraja (Target Goal)</label>
+                <select id="editTargetLevel" class="form-select-dark form-select">
+                  <option value="2">Level 2 (B1 Solid)</option>
+                  <option value="3">Level 3 (B1+ Intermediate)</option>
+                  <option value="4">Level 4 (B2 High Grinder)</option>
+                  <option value="5">Level 5 (B2+ Beast Master)</option>
+                </select>
+              </div>
+
+              <div class="col-12">
+                <label class="form-label small text-dim fw-bold">Yangi Parol (Ixtiyoriy)</label>
+                <input type="password" id="editPassword" class="form-control-dark form-control" placeholder="Hisobni himoyalash uchun parol o'rnating">
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Quick Switcher & Account Management -->
+          <div class="glass-panel p-4">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <div>
+                <h5 class="fw-bold text-light m-0">Do'stlar O'rtasida O'tish (Multi-User)</h5>
+                <div class="small text-dim">Bitta qurilmadan 4 do'st profillari orasida tezkor almashing</div>
+              </div>
+              <div class="d-flex gap-2">
+                <button class="btn btn-dark-subtle btn-sm" data-bs-toggle="modal" data-bs-target="#loginModal">Kirish</button>
+                <button class="btn btn-neon-outline btn-sm" data-bs-toggle="modal" data-bs-target="#registerModal">+ Yangi A'zo</button>
+              </div>
+            </div>
+
+            <div id="quickSwitchUserList"></div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         TAB 3: LEADERBOARD & FRIENDS ACTIVITY
+         ========================================================================= -->
+    <section id="tab-leaderboard" class="tab-content-section d-none">
+      
+      <!-- Top 3 Podium Cards -->
+      <div class="row g-3 mb-4">
+        <div class="col-md-4">
+          <div class="podium-card podium-2" id="podium2"></div>
+        </div>
+        <div class="col-md-4">
+          <div class="podium-card podium-1" id="podium1"></div>
+        </div>
+        <div class="col-md-4">
+          <div class="podium-card podium-3" id="podium3"></div>
+        </div>
+      </div>
+
+      <!-- Action Banner: 5-Day Cycle Check & Emergency Immunity -->
+      <div class="row g-3 mb-4">
+        <div class="col-md-7">
+          <div class="glass-panel p-3 d-flex flex-wrap justify-content-between align-items-center gap-3">
+            <div>
+              <div class="fw-bold text-light">5 Kunlik Sikl Tekshiruvi (Avtomatik Jarima)</div>
+              <div class="small text-dim">Oxirgi 5 kunda 350 balldan kam to'plagan ishtirokchiga +25 000 so'm katta jarima solinadi!</div>
+            </div>
+            <button class="btn btn-neon-outline btn-sm" onclick="runCyclePenaltyCheck()">⚡ Siklni Tekshirish</button>
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="glass-panel p-3 d-flex justify-content-between align-items-center gap-3">
+            <div>
+              <div class="fw-bold text-lime">🛡️ Favqulodda Immunitet</div>
+              <div class="small text-dim" id="immunityStatusText">30 kunda 1 marta jarimani bekor qilish huquqi.</div>
+            </div>
+            <button id="btnUseImmunity" class="btn btn-neon-lime btn-sm" onclick="triggerEmergencyImmunity()">Qalqonni Faollashtirish</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Leaderboard Table & Friends Activity -->
+      <div class="row g-4">
+        
+        <!-- Table Column -->
+        <div class="col-lg-8">
+          <div class="glass-panel p-4">
+            <h5 class="fw-bold text-light mb-3">🏆 Umumiy Reyting Jadvali</h5>
+            <div class="table-responsive">
+              <table class="table table-dark table-hover m-0">
+                <thead>
+                  <tr class="text-dim small text-uppercase" style="border-bottom: 2px solid var(--border-medium);">
+                    <th class="ps-3">O'rin</th>
+                    <th>Ishtirokchi</th>
+                    <th>Toifa</th>
+                    <th>Streak</th>
+                    <th>Ball</th>
+                    <th>Jarima</th>
+                    <th>Qalqon</th>
+                  </tr>
+                </thead>
+                <tbody id="leaderboardTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Activity Feed Column -->
+        <div class="col-lg-4">
+          <div class="glass-panel p-4 h-100 d-flex flex-column">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h5 class="fw-bold text-light m-0">⚡ So'nggi Aktivlik</h5>
+              <button class="btn btn-dark-subtle btn-sm py-0 px-2" onclick="loadActivityFeed()">Yangilash</button>
+            </div>
+            <div id="activityFeedContainer" class="flex-grow-1 overflow-auto" style="max-height: 520px;"></div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =========================================================================
+         TAB 4: VOCAB VAULT & MINI QUIZ / DUEL ARENA
+         ========================================================================= -->
+    <section id="tab-vocab" class="tab-content-section d-none">
+      
+      <!-- Sub-Tabs / Mode Selector -->
+      <ul class="nav nav-pills mb-4 gap-2" id="vocabSubTabs" role="tablist">
+        <li class="nav-item">
+          <button class="btn btn-dark-subtle active" data-bs-toggle="pill" data-bs-target="#subtab-vault">📚 Lug'at Ombori (Vocab Vault)</button>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-dark-subtle" data-bs-toggle="pill" data-bs-target="#subtab-quiz" onclick="startMiniQuiz()">⚡ 10-Savolli Rapid Quiz</button>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-dark-subtle" data-bs-toggle="pill" data-bs-target="#subtab-duel" onclick="setupDuelPlayers()">⚔️ 2-Kishilik Duel Arena</button>
+        </li>
+      </ul>
+
+      <div class="tab-content">
+        
+        <!-- Subtab 1: Vocab Vault -->
+        <div class="tab-pane fade show active" id="subtab-vault">
+          
+          <div class="row g-4">
+            <!-- Left: Add New Word Card -->
+            <div class="col-lg-4">
+              <div class="glass-panel p-4">
+                <h5 class="fw-bold text-light mb-3">+ Yangi So'z Kiritish</h5>
+                <div class="d-flex flex-column gap-3">
+                  <div>
+                    <label class="form-label small text-dim fw-bold">English Word</label>
+                    <input type="text" id="vaultWord" class="form-control-dark form-control" placeholder="e.g. perseverance">
+                  </div>
+                  <div>
+                    <label class="form-label small text-dim fw-bold">O'zbekcha Tarjimasi</label>
+                    <input type="text" id="vaultTrans" class="form-control-dark form-control" placeholder="e.g. matonat, qat'iyat">
+                  </div>
+                  <div>
+                    <label class="form-label small text-dim fw-bold">So'z Turikumi</label>
+                    <select id="vaultPos" class="form-select-dark form-select">
+                      <option value="noun">Noun (Ot)</option>
+                      <option value="verb">Verb (Fe'l)</option>
+                      <option value="adjective">Adjective (Sifat)</option>
+                      <option value="adverb">Adverb (Ravish)</option>
+                      <option value="idiom">Idiom / Phrase (Ibora)</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="form-label small text-dim fw-bold">Namuna Gap (Example)</label>
+                    <textarea id="vaultExample" class="form-control-dark form-control" rows="3" placeholder="e.g. Perseverance is key to mastering English."></textarea>
+                  </div>
+                  <button class="btn btn-neon-lime py-2" onclick="addVaultWordSubmit()">Lug'atga Qo'shish</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Search, Filter & Word List -->
+            <div class="col-lg-8">
+              <div class="glass-panel p-4">
+                
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+                  <div>
+                    <h5 class="fw-bold text-light m-0">Lug'at Bazasi</h5>
+                    <div class="small text-dim">Jami so'zlar: <span id="vaultTotalWordsCount" class="text-lime fw-bold">0</span> ta | Daraja talabi: <span id="vaultRequiredWordsCount" class="text-light">10</span> ta</div>
+                  </div>
+                  
+                  <div class="d-flex gap-2">
+                    <input type="text" id="vocabSearchInput" class="form-control-dark form-control form-control-sm" style="min-width: 180px;" placeholder="Qidiruv (search)...">
+                    <select id="vocabUserFilter" class="form-select-dark form-select form-select-sm" style="max-width: 140px;">
+                      <option value="">Barcha A'zolar</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Word List Container -->
+                <div id="vocabVaultItems" class="rounded overflow-auto" style="max-height: 520px; background: rgba(10, 14, 22, 0.6); border: 1px solid var(--border-subtle);"></div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Subtab 2: Rapid Quiz -->
+        <div class="tab-pane fade" id="subtab-quiz">
+          <div class="row justify-content-center">
+            <div class="col-lg-7">
+              <div class="glass-panel p-4 text-center">
+                
+                <!-- Start Screen -->
+                <div id="quizStartScreen">
+                  <div style="font-size: 3.5rem; margin-bottom: 12px;">⚡</div>
+                  <h3 class="fw-bold text-light mb-2">10-Savolli Rapid Vocab Quiz</h3>
+                  <p class="text-dim mb-4">Bazadagi so'zlarni qay darajada eslab qolganingizni tekshiring. Har bir to'g'ri javob uchun +10 ball!</p>
+                  <button class="btn btn-neon-lime px-4 py-2" onclick="startMiniQuiz()">Boshlash 🚀</button>
+                </div>
+
+                <!-- Arena Screen -->
+                <div id="quizArenaScreen" class="d-none text-start">
+                  <div class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="badge rule-badge" id="quizProgressBadge">Savol 1 / 10</span>
+                    <span class="fw-bold text-lime" id="quizCurrentScore">Ball: 0</span>
+                  </div>
+
+                  <div class="p-4 rounded text-center mb-4" style="background: rgba(14, 18, 28, 0.9); border: 1px solid var(--border-subtle);">
+                    <div class="small text-dim text-uppercase mb-1">So'z:</div>
+                    <h2 class="fw-black text-light m-0" id="quizQuestionWord">perseverance</h2>
+                    <div class="small text-muted fst-italic mt-2" id="quizQuestionExample">"Perseverance is key..."</div>
+                  </div>
+
+                  <div class="small text-dim mb-2">To'g'ri tarjimani tanlang:</div>
+                  <div class="d-flex flex-column gap-2" id="quizOptionsContainer"></div>
+                </div>
+
+                <!-- Result Screen -->
+                <div id="quizResultScreen" class="d-none py-3">
+                  <div style="font-size: 3.5rem; margin-bottom: 12px;">🎉</div>
+                  <h3 class="fw-bold text-light mb-2">Quiz Yakunlandi!</h3>
+                  <div class="fs-2 fw-black text-lime mb-2" id="quizFinalScoreText">80 / 100 Ball</div>
+                  <p class="text-dim mb-4" id="quizFeedbackMsg">Ajoyib natija!</p>
+                  <button class="btn btn-neon-lime px-4 py-2" onclick="startMiniQuiz()">Qayta O'ynash 🔄</button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Subtab 3: 2-Player Duel -->
+        <div class="tab-pane fade" id="subtab-duel">
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <div class="glass-panel p-4 text-center">
+                
+                <!-- Setup Screen -->
+                <div id="duelSetupScreen">
+                  <div style="font-size: 3.5rem; margin-bottom: 12px;">⚔️</div>
+                  <h3 class="fw-bold text-light mb-2">2-Ishtirokchi O'rtasida Vocab Duel</h3>
+                  <p class="text-dim mb-4">Guruh a'zolaridan ikkitasini tanlang va yuzma-yuz bilim jangini boshlang!</p>
+                  
+                  <div class="row g-3 justify-content-center mb-4">
+                    <div class="col-md-5">
+                      <label class="form-label small text-dim fw-bold">1-Ishtirokchi (Player 1)</label>
+                      <select id="duelPlayer1Select" class="form-select-dark form-select"></select>
+                    </div>
+                    <div class="col-auto d-flex align-items-center pt-4">
+                      <span class="fs-4 text-lime fw-bold">VS</span>
+                    </div>
+                    <div class="col-md-5">
+                      <label class="form-label small text-dim fw-bold">2-Ishtirokchi (Player 2)</label>
+                      <select id="duelPlayer2Select" class="form-select-dark form-select"></select>
+                    </div>
+                  </div>
+
+                  <button class="btn btn-neon-lime px-5 py-2 fs-6" onclick="startDuelMatch()">Duelni Boshlash ⚔️</button>
+                </div>
+
+                <!-- Arena Screen -->
+                <div id="duelArenaScreen" class="d-none text-start">
+                  
+                  <!-- Duel Header: Scoreboard -->
+                  <div class="row g-2 mb-3">
+                    <div class="col-6">
+                      <div class="p-2 rounded text-center" style="background: rgba(198, 255, 0, 0.1); border: 1px solid var(--accent-lime);">
+                        <span id="duelP1Avatar" class="fs-4">⚡</span>
+                        <div class="fw-bold text-light small" id="duelP1Name">Player 1</div>
+                        <div class="fs-4 fw-black text-lime" id="duelP1Score">0</div>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="p-2 rounded text-center" style="background: rgba(0, 240, 255, 0.1); border: 1px solid var(--accent-cyan);">
+                        <span id="duelP2Avatar" class="fs-4">🚀</span>
+                        <div class="fw-bold text-light small" id="duelP2Name">Player 2</div>
+                        <div class="fs-4 fw-black text-info" id="duelP2Score">0</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Turn Banner & Round -->
+                  <div class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="badge rule-badge" id="duelRoundBadge">Raund 1 / 10</span>
+                    <span class="fw-bold text-warning" id="duelTurnBanner">Navbat: Ali</span>
+                  </div>
+
+                  <!-- Word Card -->
+                  <div class="p-4 rounded text-center mb-3" style="background: rgba(14, 18, 28, 0.9); border: 1px solid var(--border-subtle);">
+                    <div class="small text-dim text-uppercase mb-1">Inglizcha So'z:</div>
+                    <h2 class="fw-black text-light m-0" id="duelWordTitle">ambiguous</h2>
+                  </div>
+
+                  <!-- Options -->
+                  <div class="d-flex flex-column gap-2" id="duelOptionsContainer"></div>
+
+                </div>
+
+                <!-- Winner Screen -->
+                <div id="duelWinnerScreen" class="d-none py-3">
+                  <div style="font-size: 4rem; margin-bottom: 12px;">👑</div>
+                  <h2 class="fw-black text-light mb-2" id="duelWinnerTitle">G'olib: Ali!</h2>
+                  <p class="text-dim fs-6 mb-4" id="duelWinnerDetails">Hisob: 80 vs 60.</p>
+                  <button class="btn btn-neon-lime px-4 py-2" onclick="startDuelMatch()">Yana Duel Qilish ⚔️</button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =========================================================================
+         TAB 5: GUIDE, BOOK REFERENCES & VIDEO-CHAT INTEGRATION
+         ========================================================================= -->
+    <section id="tab-guide" class="tab-content-section d-none">
+      
+      <!-- Video Chat Hero Card -->
+      <div class="glass-panel p-4 mb-4" style="background: linear-gradient(135deg, rgba(14, 18, 28, 0.95) 0%, rgba(19, 24, 38, 0.95) 100%); border-left: 4px solid var(--accent-lime);">
+        <div class="row align-items-center g-3">
+          <div class="col-lg-8">
+            <span class="badge rule-badge mb-2">HAR KECHA SOAT <span id="callTimeDisplay">21:00</span> DA</span>
+            <h4 class="fw-bold text-light mb-1">Guruh Kechki Video-Chate va Debat Zali</h4>
+            <p class="text-dim small mb-0">
+              Har kuni kechqurun 4 do'st video-chatga ulanib, 10-15 daqiqa davomida kunlik debat savoli bo'yicha inglizcha tortishadi va yangi o'rganilgan Bonus Idiom'ni nutqda ishlatishadi.
+            </p>
+          </div>
+          <div class="col-lg-4 text-lg-end d-flex flex-wrap gap-2 justify-content-lg-end">
+            <a id="heroTelegramBtn" href="#" target="_blank" class="btn btn-neon-lime">
+              <span>✈️ Telegram Chat</span>
+            </a>
+            <a id="heroMeetBtn" href="#" target="_blank" class="btn btn-neon-outline">
+              <span>📹 Google Meet</span>
+            </a>
+            <button class="btn btn-dark-subtle" onclick="openVideoLinkSettingsModal()" title="Havolalarni o'zgartirish">⚙️ Havolalar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        
+        <!-- Left: Raymond Murphy Roadmap Table (30 Units) -->
+        <div class="col-lg-8">
+          <div class="glass-panel p-4">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <div>
+                <h5 class="fw-bold text-light m-0">📚 Raymond Murphy: "English Grammar in Use" (5th Edition)</h5>
+                <div class="small text-dim">30 Kunlik Challenge davomida o'rganiladigan Unitlar yo'l xaritasi</div>
+              </div>
+            </div>
+
+            <div class="table-responsive" style="max-height: 520px; overflow-y: auto;">
+              <table class="table table-dark table-hover m-0">
+                <thead>
+                  <tr class="text-dim small text-uppercase" style="border-bottom: 2px solid var(--border-medium);">
+                    <th class="ps-3">Kun</th>
+                    <th>Grammatika Mavzusi (Murphy Unit)</th>
+                    <th>Insho Mavzusi</th>
+                    <th>Bonus Idiom</th>
+                    <th>Amal</th>
+                  </tr>
+                </thead>
+                <tbody id="murphyRoadmapBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Rules & Roast Constitution -->
+        <div class="col-lg-4">
+          <div class="glass-panel p-4 h-100">
+            <h5 class="fw-bold text-warning mb-3">⚖️ Roast Club Qonun-Qoidalari</h5>
+            
+            <div class="d-flex flex-column gap-3 small text-dim">
+              <div class="p-3 rounded" style="background: rgba(14, 18, 28, 0.7); border: 1px solid var(--border-subtle);">
+                <strong class="text-light d-block mb-1">1. Kunlik 5 Ta Vazifa (100 ball)</strong>
+                Har bir vazifa 20 balldan beradi: Murphy mashqlari, Yangi so'zlar, Listening (15m), Reading (15m), Insho yozish.
+              </div>
+
+              <div class="p-3 rounded" style="background: rgba(14, 18, 28, 0.7); border: 1px solid var(--border-subtle);">
+                <strong class="text-light d-block mb-1">2. Kunlik Jarima Miqdorlari</strong>
+                • <strong>100 ball:</strong> 0 so'm (Jarima yo'q! 🎉)<br>
+                • <strong>60–80 ball:</strong> 5,000 so'm jarima<br>
+                • <strong>0–40 ball:</strong> 10,000 so'm jarima
+              </div>
+
+              <div class="p-3 rounded" style="background: rgba(14, 18, 28, 0.7); border: 1px solid var(--border-subtle);">
+                <strong class="text-light d-block mb-1">3. 5 Kunlik Sikl Nazorati (+25k)</strong>
+                Har 5 kunlik sikl yakunida ishtirokchining umumiy bali 350 dan kam bo'lsa, +25,000 so'm katta jarima solinadi!
+              </div>
+
+              <div class="p-3 rounded" style="background: rgba(14, 18, 28, 0.7); border: 1px solid var(--border-subtle);">
+                <strong class="text-light d-block mb-1">4. Favqulodda Immunitet Qalqoni</strong>
+                Har bir ishtirokchida butun 30 kunlik challenge davomida 1 martalik kunlik jarimani bekor qilish huquqi bor.
+              </div>
+
+              <div class="p-3 rounded" style="background: rgba(14, 18, 28, 0.7); border: 1px solid var(--border-subtle);">
+                <strong class="text-light d-block mb-1">5. Haftalik Challenge & Final Imtihon</strong>
+                Har hafta yakunida mustaqil audio/video nutq, 30-kunda esa 30 ta grammatik savol va 250 so'zli inshodan iborat Final Imtihon o'tkaziladi.
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- TOAST NOTIFICATIONS CONTAINER -->
+  <div id="toastContainer"></div>
+
+  <!-- MODAL: VIDEO CHAT LINKS SETTINGS -->
+  <div class="modal fade" id="videoLinkModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content modal-content-dark">
+        <div class="modal-header modal-header-dark">
+          <h5 class="modal-title fw-bold text-light">⚙️ Video-Chat va Guruh Havolalari</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body p-4">
+          <div class="mb-3">
+            <label class="form-label small text-dim fw-bold">Telegram Guruh yoki Voice Chat Havolasi</label>
+            <input type="text" id="editTgLink" class="form-control-dark form-control" placeholder="https://t.me/your_group">
+          </div>
+          <div class="mb-3">
+            <label class="form-label small text-dim fw-bold">Google Meet Havolasi</label>
+            <input type="text" id="editMeetLink" class="form-control-dark form-control" placeholder="https://meet.google.com/abc-defg-hij">
+          </div>
+          <div class="mb-3">
+            <label class="form-label small text-dim fw-bold">Kechki Uchrashuv Vaqti</label>
+            <input type="text" id="editCallTime" class="form-control-dark form-control" placeholder="21:00">
+          </div>
+        </div>
+        <div class="modal-footer modal-footer-dark">
+          <button type="button" class="btn btn-dark-subtle" data-bs-dismiss="modal">Bekor qilish</button>
+          <button type="button" class="btn btn-neon-lime" onclick="saveVideoChatLinks()">Saqlash</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: USER LOGIN -->
+  <div class="modal fade" id="loginModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content modal-content-dark">
+        <div class="modal-header modal-header-dark">
+          <h5 class="modal-title fw-bold text-light">Kirish (Login)</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body p-4">
+          <div class="mb-3">
+            <label class="form-label small text-dim fw-bold">Foydalanuvchi nomi</label>
+            <input type="text" id="loginUsername" class="form-control-dark form-control" placeholder="Masalan: Ali">
+          </div>
+          <div class="mb-3">
+            <label class="form-label small text-dim fw-bold">Parol (agar o'rnatilgan bo'lsa)</label>
+            <input type="password" id="loginPassword" class="form-control-dark form-control" placeholder="Parol">
+          </div>
+        </div>
+        <div class="modal-footer modal-footer-dark">
+          <button type="button" class="btn btn-dark-subtle" data-bs-dismiss="modal">Yopish</button>
+          <button type="button" class="btn btn-neon-lime" onclick="handleLoginUser()">Kirish</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: REGISTER NEW USER -->
+  <div class="modal fade" id="registerModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content modal-content-dark">
+        <div class="modal-header modal-header-dark">
+          <h5 class="modal-title fw-bold text-light">Yangi Ishtirokchi Qo'shish</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body p-4">
+          <div class="mb-3">
+            <label class="form-label small text-dim fw-bold">Foydalanuvchi nomi (Username, noyob bo'lishi shart)</label>
+            <input type="text" id="regUsername" class="form-control-dark form-control" placeholder="Masalan: Sardor">
+          </div>
+          <div class="mb-3">
+            <label class="form-label small text-dim fw-bold">Ko'rinadigan Ism</label>
+            <input type="text" id="regDisplayName" class="form-control-dark form-control" placeholder="Masalan: Sardor Titan">
+          </div>
+          <div class="mb-3">
+            <label class="form-label small text-dim fw-bold">Avatar (Emoji)</label>
+            <input type="text" id="regAvatar" class="form-control-dark form-control" value="⚡">
+          </div>
+          <div class="mb-3">
+            <label class="form-label small text-dim fw-bold">Boshlang'ich Daraja (1 - 5)</label>
+            <select id="regLevel" class="form-select-dark form-select">
+              <option value="1">1. Warm-up (10 so'z / 40 so'z insho)</option>
+              <option value="2">2. Tezlashish (12 so'z / 60 so'z insho)</option>
+              <option value="3">3. Normal (15 so'z / 80 so'z insho)</option>
+              <option value="4">4. Hardcore (20 so'z / 100 so'z insho)</option>
+              <option value="5">5. Beast Mode (25 so'z / 120 so'z insho)</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label class="form-label small text-dim fw-bold">Parol (Ixtiyoriy)</label>
+            <input type="password" id="regPassword" class="form-control-dark form-control" placeholder="Parol kiriting">
+          </div>
+        </div>
+        <div class="modal-footer modal-footer-dark">
+          <button type="button" class="btn btn-dark-subtle" data-bs-dismiss="modal">Bekor qilish</button>
+          <button type="button" class="btn btn-neon-lime" onclick="handleRegisterNewUser()">Ro'yxatdan O'tish</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Canvas Confetti for celebrations -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <!-- Main Application Logic -->
+  <script src="/static/js/app.js"></script>
+
+  <script>
+    // Bridge helper for vault word submit
+    async function addVaultWordSubmit() {
+      const u = state.currentUser;
+      if (!u) return showToast("Foydalanuvchi tanlanmagan", "error");
+
+      const word = document.getElementById('vaultWord').value.trim();
+      const translation = document.getElementById('vaultTrans').value.trim();
+      const part_of_speech = document.getElementById('vaultPos').value;
+      const example = document.getElementById('vaultExample').value.trim();
+
+      if (!word || !translation) {
+        return showToast("Inglizcha so'z va tarjimasini kiriting!", "error");
+      }
+
+      try {
+        const res = await fetch('/api/vocab', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ user_id: u.id, word, translation, part_of_speech, example })
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error);
+
+        document.getElementById('vaultWord').value = '';
+        document.getElementById('vaultTrans').value = '';
+        document.getElementById('vaultExample').value = '';
+
+        showToast(`"${word}" muvaffaqiyatli qo'shildi!`, 'success');
+        await loadVocabVault();
+      } catch (err) {
+        showToast(err.message, 'error');
+      }
+    }
+  </script>
+</body>
+</html>
